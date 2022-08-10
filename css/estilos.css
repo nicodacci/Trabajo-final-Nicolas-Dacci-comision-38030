@@ -1,0 +1,23 @@
+h1{
+    background-color: lightseagreen;
+    padding: 1%;
+    text-align: center;
+}
+
+h2{
+    background-color: darkgray;
+    padding: 1%;
+    text-align: center;
+}
+
+body{
+    background-color: lightslategray;
+}
+
+button{
+    font-size: 120%;
+}
+
+p{
+    font-size: 130%;
+}
