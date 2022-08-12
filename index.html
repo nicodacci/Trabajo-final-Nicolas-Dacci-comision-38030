@@ -7,32 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inmobiliaria Celcius</title>
     <link  rel="stylesheet" href="css/estilos.css">
-    <script defer src="js/trabajo-final.js"></script>
+    <script  src="js/var-class.js"></script>
+    <script  src="js/gen-autom.js" ></script>
+    <script defer src="js/funciones.js" ></script>
+    <script  defer src="js/func-btones.js" ></script>
+    
     
 </head>
 
 <body>
-    <h1>Inmobiliaria Celcius S.A.</h1>
-    
-    <nav>
-        <button>COMPRAR</button>
-        <button>ALQUILAR</button>
-        <button>SUBIR PUBLICACIÓN</button>
-        <button>QUITAR PUBLICACIÓN</button>
+    <article class="container"></article>
+        <h1>Inmobiliaria Celcius S.A.</h1>
+        
+        <nav>
+            <button id="comprar">COMPRAR</button>
+            <button id="alquilar" >ALQUILAR</button>
+            <button id="subirPublicacion" >SUBIR PUBLICACIÓN</button>
+            <button id="quitarPublicacion" >QUITAR PUBLICACIÓN</button>
+        </nav>
+        <h2 id="titulo"></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>M2</th>
+                    <th>AMBIENTES</th>
+                    <th>PRECIO</th>
+                    <th>ESTADO</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpo">
 
-    </nav>
+            </tbody>
+        </table>
 
-    <h2>Casas en alquiler</h2>
-    <p>==>La app muestra los resultados en consola y en algunos alert</p>
-    <p>==>Genera un menú de opciones igual al de los botones en la barra de navegación</p>
-    <p>==>Funciones para operar de consola</p>
-    <p>=> comenzar()</p>
-    <p>=> mostrarComprar()</p>
-    <p>=> mostrarAlquilar()</p>
-    <p>=> publicar()</p>
-    <p>=> quitarPublicacion()</p>
-
-
+    </article>
 </body>
-<footer>Trabajo final 1er entrega- Nicolás Dacci - Comisión 38030</footer>
+<footer>Desafío complementario interactuar con html sobre trabajo final   -    Nicolás Dacci    -    Comisión 38030</footer>
 </html>

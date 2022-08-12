@@ -21,3 +21,17 @@ button{
 p{
     font-size: 130%;
 }
+
+th{
+    padding: 30px;
+}
+
+td{
+    text-align: center;
+}
+
+footer{
+    padding-top: 20px;
+    font-size: 110%;
+    
+}
