@@ -10,10 +10,10 @@ function generaId(){
 }
 
 class Casa {
-    constructor(id, supCubierta, cantAmbientes, precio, para, estado){
+    constructor(id, m2, ambientes, precio, para, estado){
         this.id = id
-        this.supCubierta = supCubierta
-        this.cantAmbientes = cantAmbientes
+        this.m2 = m2
+        this.ambientes = ambientes
         this.precio = precio
         this.para = para
         this.estado = "DISPONIBLE"

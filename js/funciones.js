@@ -1,21 +1,39 @@
 //------------------------FUNCIONES--------------------------
 
-function mostrarComprar(){
+function mostrarTodo(){
 
-    const titulo = document.querySelector("#titulo")//me conecto con el tag h2
-    const cuerpo = document.querySelector("#cuerpo")//me conecto con el body mediante el id cuerpo
+    titulo.innerHTML = "Casas disponibles"
+
+    tabla.innerHTML = `<tbody></tbody>`//limpio la tabla del body antes de usarla por si habia algo mostrandose
+    
+    casas.forEach(casa => {
+        
+        tabla.innerHTML += `<tr>
+                                <td>${casa.id}</td>
+                                <td>${casa.m2}</td>
+                                <td>${casa.ambientes}</td>
+                                <td>${casa.precio}</td>
+                                <td>${casa.para}</td>
+                                <td>${casa.estado}</td>
+                            </tr>`
+    })
+}  
+mostrarTodo()  
+
+function mostrarComprar(){
 
     titulo.innerHTML = "Casas para COMPRAR"
 
-    cuerpo.innerHTML = `<tbody></tbody>`//limpio la tabla del body antes de usarla por si habia algo mostrandose
+    tabla.innerHTML = `<tbody></tbody>`//limpio la tabla del body antes de usarla por si habia algo mostrandose
     
     casas.forEach(casa => {
         if (casa.para === 'COMPRAR' ){
-        cuerpo.innerHTML += `<tr>
+        tabla.innerHTML += `<tr>
                                 <td>${casa.id}</td>
-                                <td>${casa.supCubierta}</td>
-                                <td>${casa.cantAmbientes}</td>
+                                <td>${casa.m2}</td>
+                                <td>${casa.ambientes}</td>
                                 <td>${casa.precio}</td>
+                                <td>${casa.para}</td>
                                 <td>${casa.estado}</td>
                             </tr>`
         }
@@ -26,70 +44,90 @@ function mostrarComprar(){
 
 function mostrarAlquilar(){
 
-    const titulo = document.querySelector("#titulo")
-    const cuerpo = document.getElementById("cuerpo")
-
     titulo.innerHTML = "Casas para ALQUILAR"
     
-    cuerpo.innerHTML = `<tbody></tbody>`
+    tabla.innerHTML = `<tbody></tbody>`
 
     casas.forEach(casa => {
         if (casa.para === 'ALQUILAR' ){
-        cuerpo.innerHTML += `<tr>
+        tabla.innerHTML += `<tr>
                                 <td>${casa.id}</td>
-                                <td>${casa.supCubierta}</td>
-                                <td>${casa.cantAmbientes}</td>
+                                <td>${casa.m2}</td>
+                                <td>${casa.ambientes}</td>
                                 <td>${casa.precio}</td>
+                                <td>${casa.para}</td>
                                 <td>${casa.estado}</td>
                             </tr>`
         }
-    
     })
 }
 
 
 function subirPublicacion(){
-    
-    const id = generaId()
-    const supCubierta = parseInt(prompt("Ingrese la superficie cubierta en m2"))
-    const cantAmbientes = parseInt(prompt("Ingrese la cantidad de ambientes"))
-    const precio = parseInt(prompt("Ingrese el precio"))
-    const para = prompt("Ingrese para ALQUILAR o COMPRAR").toUpperCase()
 
-    casas.push(new Casa(id, supCubierta, cantAmbientes, precio, para))
+    //genero un evento seguimiento a donde va el cursor
+    campos.forEach(campo =>{
+        campo.addEventListener("focus", ()=>{campo.className = "fondo-verde"})
+        campo.addEventListener("blur", ()=>{campo.className = ""})
+        
+    })
 
+    //cambio el titulo
+    titulo.innerHTML = "Complete los campos para subir su publicación"
     
+    //Quito la tabla de la escena si es que estan visibles
+    tabla.innerHTML = `<tbody></tbody>`
+
+    id.value = generaId()   //genero el id automatico
+    m2.focus()              //pongo el cursor en el primer campo
 }
+
+
+function cargar(){
+
+    casas.push(new Casa(id.value, m2.value, ambientes.value, precio.value, para.value))
+
+    id.value = ""       //limpio despues de cargar
+    m2.value = ""           
+    ambientes.value = "" 
+    precio.value = ""
+    para.value = ""
+
+    titulo.innerHTML = ""
+
+    mostrarTodo()   //llamo a la fcn para ver que se cargó
+}
+
 
 
 function quitarPublicacion(){
 
-    let idIngresado
-
+    titulo.innerHTML = "Ingrese el id de la publicación a quitar"
     //validacion de ingreso
-    do{         
-
-        idIngresado = parseInt(prompt("ingrese el id"))
-
-    } while (idIngresado > 9999 || idIngresado < 0 || isNaN(idIngresado) == true)
+    //(idIngresado > 9999 || idIngresado < 0 || isNaN(idIngresado) == true)
    
+    id.className = "fondo-verde"
+    id.focus()
 
-
-    casas.forEach(casa => {     //recorro el array
-
-            let indice = casas.indexOf(casa)    //obtengo el índice
-
-            if (casa.id == idIngresado){
-
-                casas.splice(indice,1)  //uso el indice p/quitar elelemento
-
-            alert(`la publicacion con id ${casa.id} ha sido quitada con éxito`)
-            }
-    })
-    console.table(casas)    //muestro que se quitó o no
 }
 
 
+function quitar(){
+
+    let idIngresado = id.value
+
+    casas.forEach(casa => {     //recorro el array
+
+        let indice = casas.indexOf(casa)    //obtengo el índice
+
+        if (casa.id == idIngresado){
+
+            casas.splice(indice,1)  //uso el indice p/quitar elelemento
+        }
+        })
+    mostrarTodo()
+    id.value = ""
+}
 
 
 

@@ -4,6 +4,10 @@ h1{
     text-align: center;
 }
 
+.radio{
+    font-size: 150%;
+}
+
 h2{
     background-color: darkgray;
     padding: 1%;
@@ -15,7 +19,7 @@ body{
 }
 
 button{
-    font-size: 120%;
+    font-size: 140%;
 }
 
 p{
@@ -24,6 +28,7 @@ p{
 
 th{
     padding: 30px;
+    font-size: 100%;
 }
 
 td{
@@ -34,4 +39,21 @@ footer{
     padding-top: 20px;
     font-size: 110%;
     
+}
+
+.form{
+    width: 20%;
+    font-size: 150%;
+}
+
+input{
+    font-size: 100%;
+}
+
+.fondo-verde{
+    background-color: rgb(47, 248, 33) !important;
+}
+
+select{
+    font-size: 100%;
 }

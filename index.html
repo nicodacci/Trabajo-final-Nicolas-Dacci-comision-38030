@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inmobiliaria Celcius</title>
     <link  rel="stylesheet" href="css/estilos.css">
-    <script  src="js/var-class.js"></script>
-    <script  src="js/gen-autom.js" ></script>
+    <script  defer src="js/var-class.js"></script>
+    <script  defer src="js/gen-autom.js" ></script>
     <script defer src="js/funciones.js" ></script>
     <script  defer src="js/func-btones.js" ></script>
     
@@ -17,13 +17,20 @@
 
 <body>
     <article class="container"></article>
-        <h1>Inmobiliaria Celcius S.A.</h1>
+        <h1>Inmobiliaria Celsius S.A.</h1>
         
         <nav>
-            <button id="comprar">COMPRAR</button>
-            <button id="alquilar" >ALQUILAR</button>
-            <button id="subirPublicacion" >SUBIR PUBLICACIÓN</button>
-            <button id="quitarPublicacion" >QUITAR PUBLICACIÓN</button>
+            <!-- <button id="mostrarTodo">MOSTRAR TODO</button>
+            <button id="comprar">CASAS PARA COMPRAR</button>
+            <button id="alquilar" >CASAS PARA ALQUILAR</button> -->
+            <div class="radio">
+                <input type="radio" id="mostrarTodo" name="mostrar" checked="checked">Mostrar todo
+                <input type="radio" id="comprar" name="mostrar">Ver casas para comprar
+                <input type="radio" id="alquilar" name="mostrar">Ver casas para alquilar
+            </div>
+            <br>
+            <button id="subirPublicacion" >SUBIR UNA PUBLICACIÓN</button>
+            <button id="quitarPublicacion" >QUITAR UNA PUBLICACIÓN</button>
         </nav>
         <h2 id="titulo"></h2>
         <table>
@@ -33,15 +40,33 @@
                     <th>M2</th>
                     <th>AMBIENTES</th>
                     <th>PRECIO</th>
+                    <th>PARA</th>
                     <th>ESTADO</th>
                 </tr>
             </thead>
-            <tbody id="cuerpo">
+            <tbody id="tabla">
 
             </tbody>
         </table>
+        <br>
+        <div>
+            <div class="form">
+                <input type="number" id="id" placeholder="Código id">
+                <input type="number" id="m2" placeholder="m2">
+                <input type="number" id="ambientes" placeholder="Ambientes">
+                <input type="number" id="precio" placeholder="Precio">
+                    <select name="" id="para">
+                        <option value="" selected disabled>Comprar/Alquilar</option>
+                        <option value="COMPRAR">Comprar</option>
+                        <option value="ALQUILAR">Alquilar</option>
+                    </select>
+            </div>    
+            <br>
+            <button id="cargar">Cargar</button> 
+            <button id="quitar">Quitar</button>
+        </div>
 
     </article>
 </body>
-<footer>Desafío complementario interactuar con html sobre trabajo final   -    Nicolás Dacci    -    Comisión 38030</footer>
+<footer>Desafío complementario "incorporar eventos" sobre trabajo final   -    Nicolás Dacci    -    Comisión 38030</footer>
 </html>
