@@ -5,7 +5,7 @@ const tabla = document.getElementById("tabla")
 const campos = document.querySelectorAll("input")
 //--------------------------------------------------------------
 
-//me conecto con los botones superiores con querySelector mediante el id
+//me conecto con los botones con querySelector mediante el id
 const botonMostrarTodo = document.querySelector("#mostrarTodo")
 const botonComprar = document.querySelector("#comprar")
 const botonAlquilar = document.querySelector("#alquilar")
@@ -24,7 +24,7 @@ const para = document.querySelector("#para")
 
 
 
-//const campos = document.querySelectorAll("input")
+
 const btncargar = document.querySelector("#cargar")
 const btnquitar = document.querySelector("#quitar")
 

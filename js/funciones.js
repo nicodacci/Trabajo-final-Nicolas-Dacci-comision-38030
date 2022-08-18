@@ -103,8 +103,6 @@ function cargar(){
 function quitarPublicacion(){
 
     titulo.innerHTML = "Ingrese el id de la publicación a quitar"
-    //validacion de ingreso
-    //(idIngresado > 9999 || idIngresado < 0 || isNaN(idIngresado) == true)
    
     id.className = "fondo-verde"
     id.focus()
