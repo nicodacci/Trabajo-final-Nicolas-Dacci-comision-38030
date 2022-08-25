@@ -19,10 +19,8 @@ class Casa {
         this.estado = "DISPONIBLE"
         
     }
-    vender(){
-        const estado = "VENDIDO"
+    reservar(){
+        const estado = "RESERVADO"
     }
-    alquilar(){
-        const estado = "ALQUILADO"
-    }   
+       
 }
