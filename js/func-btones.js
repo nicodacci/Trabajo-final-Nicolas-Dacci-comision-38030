@@ -2,7 +2,7 @@
 
 const titulo = document.querySelector("#titulo")
 const tabla = document.getElementById("tabla")
-const campos = document.querySelectorAll("input")
+const camposInput = document.querySelectorAll(".form")
 //--------------------------------------------------------------
 
 //me conecto con los botones con querySelector mediante el id

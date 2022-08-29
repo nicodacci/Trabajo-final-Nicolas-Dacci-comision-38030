@@ -5,7 +5,7 @@ h1{
 }
 
 .radio{
-    font-size: 150%;
+    font-size: 130%;
 }
 
 h2{
@@ -26,6 +26,7 @@ p{
     font-size: 130%;
 }
 
+
 th{
     padding: 30px;
     font-size: 100%;
@@ -35,25 +36,43 @@ td{
     text-align: center;
 }
 
+
 footer{
     padding-top: 20px;
     font-size: 110%;
     
 }
 
-.form{
-    width: 20%;
-    font-size: 150%;
+
+#id{
+    width: 12%;
+    font-size: 120%;
 }
 
-input{
-    font-size: 100%;
+#m2{
+    width: 9%;
+    font-size: 120%;
+}
+
+#ambientes{
+    width: 13%;
+    font-size: 120%;
+}
+
+#precio{
+    width: 15%;
+    font-size: 120%;
+}
+
+#para{
+    width: 26%;
+    font-size: 130%;
 }
 
 .fondo-verde{
-    background-color: rgb(47, 248, 33) !important;
+    background-color: rgb(47, 248, 33);
 }
 
 select{
-    font-size: 100%;
+    font-size: 120%;
 }
