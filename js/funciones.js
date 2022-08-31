@@ -119,6 +119,8 @@ function cargar(){
     //utilizo el metodo push y creo un nuevo objeto con la clase cosntructora
         casas.push(new Casa(id.value, m2.value, ambientes.value, precio.value, para.value))
     
+        toastSwal("Su publicación se subió con éxito", "info", "linear-gradient(#391E46, #84BE68)")
+
         id.value = ""       //limpio despues de cargar
         m2.value = ""           
         ambientes.value = "" 
@@ -134,7 +136,7 @@ function cargar(){
         precio.value === "" && precio.focus()
         para.value === "" && para.focus()
 
-        alert("Completa todos los valores")
+        toastSwal("Completa todos los valores solicitados.", "warning", "linear-gradient(#391E46, #A62434)")
         }
 
     
@@ -167,8 +169,11 @@ function quitar(){
         if (casa.id == idIngresado){
 
             casas.splice(indice,1)  //uso el indice p/quitar elelemento 
+
+            toastSwal("La publicacion se quitó con éxito", "info", "linear-gradient(#391E46, #84BE68)")
         }
         })
+
 
         subirLS()
     
@@ -194,3 +199,15 @@ function recuperarDeLS(){
 
 //arrow fcn para subir a local storage
 const subirLS = ()=>localStorage.setItem("casas", JSON.stringify(casas))
+
+const toastSwal = (mensaje, icono, bgcolor) => {
+    Swal.fire({ 
+        text: mensaje,
+        toast: true,
+        icon: icono,
+        showConfirmButton: false,
+        timer: 3000,
+        background: bgcolor,
+        color:"white"
+      })
+}
